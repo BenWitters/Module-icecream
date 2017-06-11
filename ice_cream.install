@@ -1,0 +1,106 @@
+<?php
+
+use Drupal\taxonomy\Entity\Term;
+use Drupal\taxonomy\Entity\Vocabulary;
+
+/**
+ * Implements hook_schema().
+ */
+function ice_cream_schema() {
+    $schema['food'] = [
+        'description' => 'Table that contains the data of ice cream and waffles',
+        'fields' => [
+            'food_id' => [
+                'type' => 'serial',
+                'unsigned' => true,
+                'not null' => true
+            ],
+            'name' => [
+                'type' => 'varchar',
+                'length' => '50',
+                'not null' => true,
+                'default' => ''
+            ],
+            'counter' => [
+                'type' => 'int',
+            ]
+
+        ],
+        'primary key' => ['food_id'],
+    ];
+    $schema['food_data'] = [
+        'description' => 'Table that cotains the data of ice cream and waffles',
+        'fields' => [
+            'food_data_id' => [
+                'type' => 'serial',
+                'unsigned' => true,
+                'not null' => true
+            ],
+            'name' => [
+                'type' => 'varchar',
+                'length' => '30',
+                'not null' => true,
+                'default' => ''
+            ],
+            'flavor' => [
+                'type' => 'varchar',
+                'length' => '30',
+            ],
+            'toppings' => [
+                'type' => 'varchar',
+                'length' => '100',
+            ],
+            'language' => [
+                'type' => 'varchar',
+                'length' => '25'
+            ],
+            'ip_adres' => [
+                'type' => 'varchar',
+                'length' => '25'
+            ],
+
+        ],
+        'primary key' => ['food_data_id'],
+    ];
+    return $schema;
+}
+
+/**
+ * Implements hook_install().
+ */
+function ice_cream_install(){
+
+    // Make flavor vocabulary.
+    $flavorId = "flavor_id";
+    $flavorName = "Flavors";
+    createVocabulary($flavorId, $flavorName);
+
+    // Make topping vocabulary.
+    $toppingId = "topping_id";
+    $toppingName = "Toppings";
+    createVocabulary($toppingId, $toppingName);
+
+    // Create default terms.
+    Term::create([
+        'name' => 'vanille',
+        'vid' => $flavorId,
+    ])->save();
+
+    Term::create([
+        'name' => 'slagroom',
+        'vid' => $toppingId,
+    ])->save();
+}
+
+// Create vocabulary by id and name.
+function createVocabulary($vId, $vName) {
+    $vocabularies = Vocabulary::loadMultiple();
+    if (!isset($vocabularies[$vId])) {
+        $vocabulary = Vocabulary::create([
+            'vid' => $vId,
+            'machine_name' => $vId,
+            'name' => $vName,
+        ]);
+        $vocabulary->save();
+    }
+}

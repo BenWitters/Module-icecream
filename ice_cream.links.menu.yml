@@ -1,0 +1,12 @@
+ice_cream.admin:
+  title: 'Ice cream settings'
+  description: 'A module for ordering ice cream and waffles'
+  parent: system.admin_config_development
+  route_name: ice_cream_admin
+  weight: 100
+ice-cream.overview:
+  title: 'Ice cream overview'
+  description: 'The overview of ice cream and waffle orders'
+  parent: system.admin_config_development
+  route_name: ice_cream_overview
+  weight: 100

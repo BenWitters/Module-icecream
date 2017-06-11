@@ -1,0 +1,18 @@
+ice_cream_admin:
+  path: /admin/icecream
+  defaults:
+    _controller: Drupal\ice_cream\Controller\ConfigurationController::setThreshold
+    _title: 'Ice cream configuration'
+  requirements:
+    _permission: 'administer site configuration'
+  options:
+    _admin_route: true
+ice_cream_overview:
+  path: /admin/icecream-overview
+  defaults:
+    _controller: Drupal\ice_cream\Controller\OverviewController::content
+    _title: 'Ice cream overview'
+  requirements:
+    _permission: 'administer site configuration'
+  options:
+    _admin_route: true

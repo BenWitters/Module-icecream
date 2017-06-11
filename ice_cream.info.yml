@@ -1,0 +1,6 @@
+name: Ice cream
+type: module
+description: "Module for project ice cream"
+package: custom
+version: 1.0
+core: 8.x

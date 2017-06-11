@@ -1,0 +1,150 @@
+body{
+    background-color: #FCF9F0 !important;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif !important;
+}
+
+.showcases{
+    margin-bottom: 50px;
+    margin-top: 30px;
+}
+
+.block_showcase-icecream{
+    background-color: #ffc5d9;
+    padding: 15px 30px;
+    margin-bottom: 15px;
+    box-shadow: 0 0 55px 0 rgba(0,0,0,.15);
+}
+
+.block_showcase-waffles{
+    background-color: #ffcb85;
+    padding: 15px 30px;
+    box-shadow: 0 0 55px 0 rgba(0,0,0,.15);
+}
+
+.block_showcase--amount{
+    color: #fff;
+    font-size: 2rem;
+    text-align: center;
+}
+
+.block_showcase--title{
+    color: #fff;
+    font-size: 1.5rem;
+    font-weight: 800;
+    text-align: center;
+    line-height: 25px;
+}
+
+.block_overview-icecream{
+    box-shadow: 0 0 55px 0 rgba(0,0,0,.15);
+    background-color: #c2f2d0;
+    padding: 30px;
+    margin-bottom: 50px;
+}
+
+.block_overview-icecream--title{
+    color: #fff;
+    font-size: 1.7rem;
+    font-weight: 800;
+    line-height: 25px;
+    padding-bottom: 20px;
+    margin: 0px;
+}
+
+.block_overview-icecream--flavor{
+    display: flex;
+}
+
+.block_overview-icecream--flavorname{
+    width: 30%;
+    text-align: center;
+    color: #fff;
+    font-size: 1.2rem;
+    font-weight: 700;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+.block_overview-icecream--flavorpercentage{
+    background-color: #fff;
+    color: #c2f2d0;
+    font-size: 1.2rem;
+    font-weight: 700;
+    text-align: center;
+    width: 10%;
+    padding-top: 5px;
+}
+
+.block_userdata{
+    background-color: #fdf5c9;
+    box-shadow: 0 0 55px 0 rgba(0,0,0,.15);
+    padding: 30px;
+}
+
+.block_userdata--title{
+    color: #434343;
+    font-size: 1.7rem;
+    font-weight: 800;
+    line-height: 25px;
+    padding-bottom: 20px;
+    margin: 0px;
+    width: 100%;
+}
+
+.block_userdata-language{
+    width: 100%;
+    margin-bottom: 35px;
+}
+
+.block_userdata-language--title, .block_userdata-ip--title{
+    text-align: center;
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+
+.block_userdata-language p{
+    text-align: center;
+    font-size: 1.2rem;
+}
+
+.block_userdata-ip{
+    width: 100%;
+}
+
+.block_userdata-ip p{
+    text-align: center;
+    font-size: 1.2rem;
+}
+
+@media (min-width: 768px){
+    .showcases{
+        display: flex;
+    }
+
+    .block_showcase-icecream{
+        width: 48%;
+        margin-right: 2%;
+        margin-bottom: 0px;
+    }
+
+    .block_showcase-waffles{
+        width: 48%;
+        margin-left: 2%;
+    }
+
+    .block_overview-icecream--flavorname{
+        width: 20%;
+    }
+
+    .block_userdata-all{
+        display: flex;
+    }
+
+    .block_userdata-language{
+        width: 50%;
+    }
+
+    .block_userdata-ip{
+        width: 50%;
+    }
+}

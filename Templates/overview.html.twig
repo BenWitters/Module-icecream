@@ -1,0 +1,54 @@
+{{ attach_library('ice_cream/icecream-overview-style') }}
+<div class="showcases">
+    <div class="block_showcase-icecream">
+        <p class="block_showcase--title">Totaal aantal bestelde ijsjes</p>
+        <p class="block_showcase--amount">{{ icecreamCount }}</p>
+    </div>
+
+    <div class="block_showcase-waffles">
+        <p class="block_showcase--title">Totaal aantal bestelde wafels</p>
+        <p class="block_showcase--amount">{{ waffleCount }}</p>
+    </div>
+</div>
+
+<div class="block_overview-icecream">
+    <p class="block_overview-icecream--title">Overzicht bestelde ijsjes</p>
+    {% for key, flavor in flavors %}
+        {% for key, value in flavor %}
+            <div class="block_overview-icecream--flavor">
+                <p class="block_overview-icecream--flavorname" >{{ key }}</p>
+                <p class="block_overview-icecream--flavorpercentage" style="width: {{ value }}%">{{ value }}%</p>
+            </div>
+        {% endfor %}
+    {% endfor %}
+</div>
+
+<div class="block_userdata">
+    <p class="block_userdata--title">Gebruikersdata</p>
+    <div class="block_userdata-all">
+        <div class="block_userdata-language">
+            <p class="block_userdata-language--title">Talen</p>
+            {% for key, value in languages %}
+                {% for language in value %}
+                <div>
+                    <p>{{ language }}</p>
+                </div>
+                {% endfor %}
+            {% endfor %}
+        </div>
+        <div class="block_userdata-ip">
+            <p class="block_userdata-ip--title">Ip-adressen die het laatst bestelden</p>
+            {% for key, value in ips %}
+                {% for ip in value %}
+                    <div>
+                        <p>{{ ip }}</p>
+                    </div>
+                {% endfor %}
+            {% endfor %}
+        </div>
+    </div>
+</div>
+
+
+
+
